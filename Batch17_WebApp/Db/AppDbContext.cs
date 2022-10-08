@@ -14,5 +14,6 @@ namespace Batch17_WebApp.Db
         }
 
         public DbSet<EmployeeModel> Employees { get; set; }
+        public DbSet<SalaryModel> Salaries { get; set; }
     }
 }
