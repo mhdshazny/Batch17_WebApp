@@ -2,6 +2,7 @@
 using Batch17_WebApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Batch17_WebApp.Controllers
         // GET: EmployeeController/Details/5
         public ActionResult Details(int id)
         {
-            EmployeeModel Data = dbContext.Employees.Find(id);
+            EmployeeModel Data = dbContext.Employees.Include(i=>i.Salaries).Where(x=>x.ID==id).FirstOrDefault();
             return View(Data);
         }
 

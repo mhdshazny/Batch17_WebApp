@@ -26,7 +26,8 @@ namespace Batch17_WebApp.Models
         [EnumDataType(typeof(Status))]
         [Required(ErrorMessage = "Provide Status")]
         [DataType(DataType.Text)]
-        public Status Status { get; set; }
+        public string Status { get; set; }
+        public IList<SalaryModel> Salaries { get; set; }
     }
 
     public enum Status
